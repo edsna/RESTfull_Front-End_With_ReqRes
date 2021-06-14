@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RESTfull API Front-End</title>
+    </head>
+    <body>
+
+        <h1> Context </h1>
+        <p>This website demonstrates the functionality of a Front-end built to interact with the <a href="https://reqres.in/">ResReq.in </a> RESTfull API. </p>
+
+        <h1>Get Method Demo</h1>
+        <p>I will show the functionality of the Get method by displaying a list of users curently in the API <br>
+            When you are ready, click on the button below to see the list of users.
+        </p>
+
+        <button onclick="getDemo()"> Display Users </button>
+
+
+        <script>
+            const api_get_url = 'https://reqres.in/api/users';
+            async function getDemo(){
+                const response = await fetch(api_get_url);
+                const data = await response.json();
+
+                console.log(data);
+            }
+
+        </script>
+
+        <p id="getDemo"></p>
+
+
+    </body>
+</html>
